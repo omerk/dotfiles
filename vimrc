@@ -23,3 +23,8 @@ set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character  
 set statusline+=%<%P                         " file position  
 
+" shortcuts for tabs
+nmap <C-J> :tabnew<CR>
+nmap <C-K> :tabprev<CR>
+nmap <C-L> :tabnext<CR>
+
