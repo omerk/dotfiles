@@ -11,8 +11,8 @@ for file in [a-zA-Z]* ; do
 			rm ~/."$file"
 		elif [[ -a ~/."$file" ]] ; then
 			# an actual file, create backup
-			echo "  ~/.$file exists. Moving it to ~/.$file.back"
-			mv ~/."$file" ~/."$file".back || echo "Couldn't move ~/.$file to ~/.$file.backup!"
+			echo "  ~/.$file exists. Moving it to ~/.$file.backup"
+			mv ~/."$file" ~/."$file".backup || echo "Couldn't move ~/.$file to ~/.$file.backup!"
 		fi
 
 		ln -s `pwd`/"$file" ~/."$file" && echo "Linked ~/.$file to `pwd`/$file" || echo "Couldn't link ~/.$file to `pwd`/$file!"
