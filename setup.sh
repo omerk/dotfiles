@@ -3,6 +3,12 @@
 # setup.sh -- Creates symlinks for the dotfiles
 # Shamelessly stolen from: http://coderwall.com/p/qz3i5w
 
+# Initialise and update the submodules
+echo ">> Initialising git submodules"
+git submodule init
+git submodule update
+
+echo -e "\n>> Creating symlinks"
 for file in [a-zA-Z]* ; do
 	if [[ "$file" != "setup.sh" && "$file" != "README.md" ]] ; then
 		if [[ -h ~/."$file" ]] ; then
@@ -12,10 +18,10 @@ for file in [a-zA-Z]* ; do
 		elif [[ -a ~/."$file" ]] ; then
 			# an actual file, create backup
 			echo "  ~/.$file exists. Moving it to ~/.$file.backup"
-			mv ~/."$file" ~/."$file".backup || echo "Couldn't move ~/.$file to ~/.$file.backup!"
+			mv ~/."$file" ~/."$file".backup || echo "  Couldn't move ~/.$file to ~/.$file.backup!"
 		fi
 
-		ln -s `pwd`/"$file" ~/."$file" && echo "Linked ~/.$file to `pwd`/$file" || echo "Couldn't link ~/.$file to `pwd`/$file!"
+		ln -s `pwd`/"$file" ~/."$file" && echo "  Linked ~/.$file to `pwd`/$file" || echo "  Couldn't link ~/.$file to `pwd`/$file!"
 	fi
 done
 
