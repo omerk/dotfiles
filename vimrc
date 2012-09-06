@@ -4,6 +4,11 @@ set tabstop=3
 "set autoindent
 "set smartindent
 set hidden
+filetype plugin indent on
+
+" pathogen
+call pathogen#infect()
+call pathogen#helptags()
 
 " bufferlist.vim
 map <silent> ` :call BufferList()<CR>
