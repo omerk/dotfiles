@@ -6,6 +6,18 @@ set tabstop=3
 set hidden
 filetype plugin indent on
 
+" colour scheme
+set t_Co=256
+"colorscheme 256-jungle
+
+" tab completion
+set wildmode=longest,list,full
+set wildmenu
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+set wildignore+=.DS_Store,.git,.hg,.svn
+set wildignore+=*~,*.swp,*.tmp
+
 " pathogen
 call pathogen#infect()
 call pathogen#helptags()
@@ -27,6 +39,11 @@ set statusline+=%=                           " right align remainder
 set statusline+=0x%-8B                       " character value  
 set statusline+=%-14(%l,%c%V%)               " line, character  
 set statusline+=%<%P                         " file position  
+
+" paste mode
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 " shortcuts for tabs
 nmap <C-J> :tabnew<CR>
