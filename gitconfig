@@ -1,5 +1,7 @@
 [user]
 	name = Omer Kilic
 	email = omerkilic@gmail.com
+
+[core]
 	editor = vim
 
