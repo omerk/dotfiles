@@ -4,6 +4,7 @@
 # Shamelessly stolen from: http://coderwall.com/p/qz3i5w
 
 # Initialise and update the submodules
+# Usage detailed here: http://mirnazim.org/writings/vim-plugins-i-use/
 echo ">> Initialising git submodules"
 git submodule init
 git submodule update
