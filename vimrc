@@ -8,7 +8,7 @@ filetype plugin indent on
 
 " colour scheme
 set t_Co=256
-"colorscheme 256-jungle
+colorscheme jellybeans
 
 " tab completion
 set wildmode=longest,list,full
@@ -25,8 +25,14 @@ call pathogen#helptags()
 " bufferlist.vim
 map <silent> ` :call BufferList()<CR>
 let g:BufferListWidth = 25
-let g:BufferListMaxWidth = 50
+let g:BufferListMaxWidth = 40
 hi BufferSelected term=reverse ctermfg=white ctermbg=blue cterm=bold
+
+" taglist.vim
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <F2> :TlistToggle<CR><C-W>w
+map <F3> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " status line  
 set laststatus=2                             " always show statusbar  
@@ -41,8 +47,8 @@ set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position  
 
 " paste mode
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
+nnoremap <F4> :set invpaste paste?<CR>
+set pastetoggle=<F4>
 set showmode
 
 " shortcuts for tabs
