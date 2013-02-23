@@ -1,0 +1,95 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+# Settings
+##############################################
+background yes
+use_xft yes
+xftfont Ubuntu:size=9
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type normal
+#own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 200
+maximum_width 240
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color 656667
+default_shade_color 000000
+default_outline_color 828282
+alignment top_right
+gap_x 12
+gap_y 56
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+
+##############################################
+#  Output
+##############################################
+TEXT
+## system
+${color CC9900}S Y S T E M ${hr 2}$color
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+
+## disk
+${color CC9900}D I S K ${hr 2}$color
+${fs_type}: ${fs_free_perc /}% ${color FFFF33} ${fs_bar 6 /}$color
+
+## memory
+${color CC9900}M E M O R Y ${hr 2}$color
+RAM: $memperc% ${color FF6600} ${alignr}${membar 6,160}$color
+Swap: $swapperc% ${color FF6600} ${alignr}${swapbar 6,160}$color
+
+## cpu
+${color CC9900}C P U ${hr 2}$color
+${cpu cpu0}%  ${alignr}${cpubar cpu0 8,190}
+
+## battery
+${color CC9900}B A T T E R Y ${hr 2}$color
+${battery_percent BAT0}%  ${alignr}${battery_bar 8,190 BAT0}
+
+## network - eth1
+${color CC9900}W L A N (${addr eth1}) ${hr 2}$color
+Down: $color${downspeed eth1} ${alignr}Up: ${upspeed eth1}
+${downspeedgraph eth1 25,100 000000 00ff00} ${alignr}${upspeedgraph eth1 25,100 000000 ff0000}$color
+Total: ${totaldown eth1} ${alignr}Total: ${totalup eth1}
+
+## network - eth0
+${color CC9900}E T H 0 (${addr eth0}) ${hr 2}$color
+Down: $color${downspeed eth0} ${alignr}Up: ${upspeed eth0}
+${downspeedgraph eth0 25,100 000000 00ff00} ${alignr}${upspeedgraph eth0 25,100 000000 ff0000}$color
+Total: ${totaldown eth0} ${alignr}Total: ${totalup eth0}
+
+## processes
+${color CC9900}S O C K E T S ${hr 2}$color
+Inbound: ${tcp_portmon 1 32767 count} ${alignr}Outbound: ${tcp_portmon 32768 61000 count}${alignr}
+
+## processes
+${color CC9900}P R O C E S S E S ${hr 2}$color
+NAME          PID      CPU%   MEM%
+${color CCFFFF}${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}$color
