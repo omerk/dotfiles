@@ -11,7 +11,7 @@ git submodule update
 
 echo -e "\n>> Creating symlinks"
 for file in [a-zA-Z]* ; do
-	if [[ "$file" != "setup.sh" && "$file" != "README.md" ]] ; then
+	if [[ "$file" != "setup.sh" && "$file" != "README.md" && "$file" != "env" ]] ; then
 		if [[ -h ~/."$file" ]] ; then
 			# symlink, remove it since it will be re-created anyway
 			echo "  Removing symbolic link ~/.$file"
