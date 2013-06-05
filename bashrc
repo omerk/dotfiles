@@ -1,2 +1,2 @@
 export TERM=xterm-256color
-export PATH=PATH:/home/omer/bin
+export PATH=/home/omer/bin:$PATH
