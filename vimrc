@@ -65,6 +65,13 @@ nnoremap <F4> :set invpaste paste?<CR>
 set pastetoggle=<F4>
 set showmode
 
+" text width stuff
+set textwidth=80
+set colorcolumn=80
+highlight ColorColumn ctermbg=232
+highlight OverLength ctermbg=167 ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 " shortcuts for tabs
 nmap <C-J> :tabnew<CR>
 nmap <C-K> :tabprev<CR>
