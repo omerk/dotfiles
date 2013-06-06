@@ -23,6 +23,8 @@ Bundle 'gmarik/vundle'
 Bundle 'vim-erlang/vim-erlang'
 Bundle 'roblillack/vim-bufferlist'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 filetype plugin indent on	" Vundle loaded, this can be turned back on
 
