@@ -1,14 +1,42 @@
 syntax on
 set number
-set tabstop=3
+set tabstop=4
 "set autoindent
 "set smartindent
 set hidden
-filetype plugin indent on
+filetype off	" turn this off temporarily for Vundle
 
 " colour scheme
 set t_Co=256
 colorscheme jellybeans
+
+" pathogen
+"call pathogen#infect()
+"call pathogen#helptags()
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Stuff Vundle manages
+Bundle 'gmarik/vundle'
+Bundle 'vim-erlang/vim-erlang'
+Bundle 'roblillack/vim-bufferlist'
+Bundle 'vim-scripts/taglist.vim'
+
+filetype plugin indent on	" Vundle loaded, this can be turned back on
+
+" bufferlist
+map <silent> ` :call BufferList()<CR>
+let g:BufferListWidth = 25
+let g:BufferListMaxWidth = 40
+hi BufferSelected term=reverse ctermfg=white ctermbg=blue cterm=bold
+
+" taglist
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <F2> :TlistToggle<CR><C-W>w
+map <F3> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " tab completion
 set wildmode=longest,list,full
@@ -17,22 +45,6 @@ set wildignore+=*.a,*.o
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*~,*.swp,*.tmp
-
-" pathogen
-call pathogen#infect()
-call pathogen#helptags()
-
-" bufferlist.vim
-map <silent> ` :call BufferList()<CR>
-let g:BufferListWidth = 25
-let g:BufferListMaxWidth = 40
-hi BufferSelected term=reverse ctermfg=white ctermbg=blue cterm=bold
-
-" taglist.vim
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 50
-map <F2> :TlistToggle<CR><C-W>w
-map <F3> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " status line  
 set laststatus=2                             " always show statusbar  
