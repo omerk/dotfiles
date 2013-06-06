@@ -9,6 +9,9 @@ echo ">> Initialising git submodules"
 git submodule init
 git submodule update
 
+echo ">> Install vim bundles using Vundle"
+vim +BundleInstall +qall
+
 echo -e "\n>> Creating symlinks"
 for file in [a-zA-Z]* ; do
 	if [[ "$file" != "setup.sh" && "$file" != "README.md" && "$file" != "env" ]] ; then
