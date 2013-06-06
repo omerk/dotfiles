@@ -2,6 +2,9 @@
 	name = Omer Kilic
 	email = omerkilic@gmail.com
 
+[github]
+	user = omerk
+
 [core]
 	editor = vim
 
