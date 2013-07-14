@@ -66,11 +66,21 @@ set pastetoggle=<F4>
 set showmode
 
 " text width stuff
-set textwidth=80
-set colorcolumn=80
+set textwidth=100
+set colorcolumn=100
 highlight ColorColumn ctermbg=232
 highlight OverLength ctermbg=167 ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%101v.\+/
+
+" font selection and gui specific fixes
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_win32")
+    set guifont=Consolas:h13:cANSI
+    set backspace=indent,eol,start " fix backspace
+  endif
+endif
 
 " shortcuts for tabs
 nmap <C-J> :tabnew<CR>
