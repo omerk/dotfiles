@@ -1,9 +1,10 @@
-syntax on
+set nocompatible
 set number
 set tabstop=4
 "set autoindent
 "set smartindent
 set hidden
+syntax on
 filetype off	" turn this off temporarily for Vundle
 
 " colour scheme
@@ -72,10 +73,12 @@ highlight ColorColumn ctermbg=232
 highlight OverLength ctermbg=167 ctermfg=white guibg=#592929
 match OverLength /\%101v.\+/
 
-" font selection and gui specific fixes
+" gui options
 if has("gui_running")
+  set guioptions=rem
+
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
+    set guifont=Inconsolata\ 13
   elseif has("gui_win32")
     set guifont=Consolas:h13:cANSI
     set backspace=indent,eol,start " fix backspace
