@@ -61,6 +61,9 @@ set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character  
 set statusline+=%<%P                         " file position  
 
+" replace statusline with powerline, if it exists
+set rtp+=/home/omer/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
 " paste mode
 nnoremap <F4> :set invpaste paste?<CR>
 set pastetoggle=<F4>
