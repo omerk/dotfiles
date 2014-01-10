@@ -3,15 +3,13 @@
 # setup.sh -- Creates symlinks for the dotfiles
 # Shamelessly stolen from: http://coderwall.com/p/qz3i5w
 
-# Initialise and update the submodules
+# Init and update the submodules
 # Usage detailed here: http://mirnazim.org/writings/vim-plugins-i-use/
 echo ">> Initialising git submodules"
 git submodule init
 git submodule update
 
-echo ">> Install vim bundles using Vundle"
-vim +BundleInstall +qall
-
+# Init symlinks for config files
 echo -e "\n>> Creating symlinks"
 for file in [a-zA-Z]* ; do
 	if [[ "$file" != "setup.sh" && "$file" != "README.md" && "$file" != "env" ]] ; then
@@ -28,4 +26,8 @@ for file in [a-zA-Z]* ; do
 		ln -s `pwd`/"$file" ~/."$file" && echo "  Linked ~/.$file to `pwd`/$file" || echo "  Couldn't link ~/.$file to `pwd`/$file!"
 	fi
 done
+
+# Init vim bundles
+echo ">> Install vim bundles using Vundle"
+vim +BundleInstall +qall
 

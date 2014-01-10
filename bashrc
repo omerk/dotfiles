@@ -5,6 +5,10 @@ export PATH=$HOME/bin:$HOME/.local/bin::$PATH
 alias gitdf='git diff --color'
 alias gitst='git status'
 alias gitlg='git log --pretty=short'
+
+alias sl='dmesg | egrep --color "ttyUSB|ttyACM|ttyAMA"'
+alias sr='resize && reset'
+
 alias please=sudo
 
 # powerline prompt
