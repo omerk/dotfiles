@@ -71,7 +71,9 @@ set showmode
 
 " text width stuff
 set textwidth=100
-set colorcolumn=100
+if v:version >= 730
+  set colorcolumn=100
+endif
 highlight ColorColumn ctermbg=232
 highlight OverLength ctermbg=167 ctermfg=white guibg=#592929
 match OverLength /\%101v.\+/
