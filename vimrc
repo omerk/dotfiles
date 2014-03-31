@@ -62,7 +62,7 @@ set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position  
 
 " replace statusline with powerline, if it exists
-set rtp+=/home/omer/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"set rtp+=/home/omer/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 
 " paste mode
 nnoremap <F4> :set invpaste paste?<CR>
@@ -94,4 +94,8 @@ endif
 nmap <C-J> :tabnew<CR>
 nmap <C-K> :tabprev<CR>
 nmap <C-L> :tabnext<CR>
+
+" misc shortcuts
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command Wq :execute ':W' | :q
 
