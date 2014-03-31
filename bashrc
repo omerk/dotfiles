@@ -1,5 +1,5 @@
 export TERM=xterm-256color
-export PATH=$HOME/bin:$HOME/.local/bin::$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/sbin:$PATH
 
 # aliases
 alias gitdf='git diff --color'
@@ -8,6 +8,8 @@ alias gitlg='git log --pretty=short'
 
 alias sl='dmesg | egrep --color "ttyUSB|ttyACM|ttyAMA"'
 alias sr='resize && reset'
+
+alias ls='ls --color'
 
 alias please=sudo
 
