@@ -4,7 +4,7 @@ export PATH=$HOME/bin:$HOME/.local/bin::$PATH
 # aliases
 alias gitdf='git diff --color'
 alias gitst='git status'
-alias gitlg='git log --pretty=short'
+alias gitlg="git log --graph --pretty=format:'%C(bold yellow)%h%Creset -%C(bold red)%d%Creset %s %C(bold green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 alias sl='dmesg | egrep --color "ttyUSB|ttyACM|ttyAMA"'
 alias sr='resize && reset'
