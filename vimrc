@@ -26,6 +26,7 @@ Bundle 'roblillack/vim-bufferlist'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'jeetsukumaran/vim-buffersaurus'
 
 filetype plugin indent on	" Vundle loaded, this can be turned back on
 
@@ -98,4 +99,4 @@ nmap <C-L> :tabnext<CR>
 " misc shortcuts
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command Wq :execute ':W' | :q
-
+command Q :execute ':q!'
