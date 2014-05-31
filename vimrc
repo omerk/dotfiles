@@ -27,6 +27,7 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'jeetsukumaran/vim-buffersaurus'
+Bundle 'fatih/vim-go'
 
 filetype plugin indent on	" Vundle loaded, this can be turned back on
 
@@ -100,3 +101,7 @@ nmap <C-L> :tabnext<CR>
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command Wq :execute ':W' | :q
 command Q :execute ':q!'
+
+" vim-go
+let g:go_disable_autoinstall = 1
+
