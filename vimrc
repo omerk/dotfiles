@@ -29,8 +29,10 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'jeetsukumaran/vim-buffersaurus'
 Bundle 'fatih/vim-go'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
 
-filetype plugin indent on	" Vundle loaded, this can be turned back on
+filetype plugin on	" Vundle loaded, this can be turned back on
+set omnifunc=syntaxcomplete#Complete
 
 " bufferlist
 map <silent> ` :call BufferList()<CR>
