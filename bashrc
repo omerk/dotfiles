@@ -38,6 +38,19 @@ alias please=sudo
 #	source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 #fi
 
+function pdfext()
+{
+	if [ $# -eq 3 ]; then
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
+		-dFirstPage=${2} \
+		-dLastPage=${3} \
+		-sOutputFile=${1%.pdf}_p${2}-p${3}.pdf \
+		${1}
+	else
+		echo "usage: pdfext <filename> <first-page> <last-page>"
+	fi
+}
+
 export GOROOT=$HOME/pkg/go
 export PATH=$PATH:$GOROOT/bin
 
