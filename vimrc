@@ -5,6 +5,7 @@ set shiftwidth=4
 "set autoindent
 "set smartindent
 set hidden
+set shortmess+=I
 syntax on
 filetype off	" turn this off temporarily for Vundle
 
@@ -43,8 +44,11 @@ hi BufferSelected term=reverse ctermfg=white ctermbg=blue cterm=bold
 " taglist
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
-map <F2> :TlistToggle<CR><C-W>w
-map <F3> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+map <F2> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>:TlistToggle<CR><C-W>w
+
+" LaTeX stuff
+let g:LatexBox_fold_toc = 0
+map <F3> :LatexTOCToggle<CR>
 
 " tab completion
 set wildmode=longest,list,full
@@ -88,9 +92,9 @@ if has("gui_running")
   set guioptions=rem
 
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 13
+    set guifont=Droid\ Sans\ Mono\ 11
   elseif has("gui_win32")
-    set guifont=Consolas:h13:cANSI
+    set guifont=Consolas:h11:cANSI
     set backspace=indent,eol,start " fix backspace
   endif
 endif
