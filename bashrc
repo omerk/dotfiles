@@ -32,6 +32,7 @@ alias ll='ls -alh'
 alias webs='python -m SimpleHTTPServer'
 
 alias please=sudo
+alias fuck='sudo $(history -p \!\!)' 
 
 # powerline prompt
 #if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
