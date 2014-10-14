@@ -31,6 +31,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'jeetsukumaran/vim-buffersaurus'
 Bundle 'fatih/vim-go'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'tpope/vim-markdown'
 
 filetype plugin on	" Vundle loaded, this can be turned back on
 set omnifunc=syntaxcomplete#Complete
@@ -111,4 +112,7 @@ command Q :execute ':q!'
 
 " vim-go
 let g:go_disable_autoinstall = 1
+
+" vim-markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
