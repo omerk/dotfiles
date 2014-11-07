@@ -23,7 +23,7 @@ call vundle#rc()
 
 " Stuff Vundle manages
 Bundle 'gmarik/vundle'
-Bundle 'vim-erlang/vim-erlang'
+Bundle 'vim-erlang/vim-erlang-runtime'
 Bundle 'roblillack/vim-bufferlist'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'mattn/webapi-vim'
