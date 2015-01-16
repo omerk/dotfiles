@@ -34,24 +34,41 @@ alias webs='python -m SimpleHTTPServer'
 alias please=sudo
 alias fuck='sudo $(history -p \!\!)' 
 
+alias ..='cd ../../'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../../'
+alias ......='cd ../../../../../../'
+
 # powerline prompt
 #if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
 #	source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 #fi
 
-function pdfext()
+function pdfsplit()
 {
 	if [ $# -eq 3 ]; then
-	gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
-		-dFirstPage=${2} \
-		-dLastPage=${3} \
-		-sOutputFile=${1%.pdf}_p${2}-p${3}.pdf \
-		${1}
+		gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
+			-dFirstPage=${2} \
+			-dLastPage=${3} \
+			-sOutputFile="${1%.pdf}_p${2}-p${3}.pdf" \
+			"${1}"
 	else
-		echo "usage: pdfext <filename> <first-page> <last-page>"
+		echo "usage: pdfsplit <source-file> <first-page> <last-page>"
+	fi
+}
+
+function pdfjoin()
+{
+	if [ $# -ge 3 ]; then
+		gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -sOutputFile="${1}" "${2}" "${3}" \
+			"${4}" "${5}" "${6}" "${7}" "${8}" "${9}" "${10}" "${11}" "${12}" "${13}"  
+	else
+		echo "usage: pdfjoin <merged-file> <first-pdf> <...> <last-pdf>"
 	fi
 }
 
 export GOROOT=$HOME/pkg/go
 export PATH=$PATH:$GOROOT/bin
 
+export PATH="$PATH:$HOME/.rvm/bin"
