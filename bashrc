@@ -40,10 +40,17 @@ alias ....='cd ../../../../'
 alias .....='cd ../../../../../'
 alias ......='cd ../../../../../../'
 
+alias v=vagrant
+
 # powerline prompt
 #if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
 #	source ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 #fi
+
+function f()
+{
+	grep -ri ${1} .
+}
 
 function pdfsplit()
 {
@@ -72,3 +79,6 @@ export GOROOT=$HOME/pkg/go
 export PATH=$PATH:$GOROOT/bin
 
 export PATH="$PATH:$HOME/.rvm/bin"
+
+. /opt/erlang/activate
+
