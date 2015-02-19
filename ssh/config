@@ -1,0 +1,5 @@
+Host office
+     Port 2222
+     #HostName foo.bar.com
+     #User foo
+     #IdentityFile ~/.ssh/id_rsa_foo
