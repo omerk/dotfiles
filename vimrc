@@ -23,13 +23,11 @@ call vundle#rc()
 
 " Stuff Vundle manages
 Bundle 'gmarik/vundle'
-Bundle 'vim-erlang/vim-erlang-runtime'
 Bundle 'roblillack/vim-bufferlist'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'jeetsukumaran/vim-buffersaurus'
-Bundle 'fatih/vim-go'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'tpope/vim-markdown'
 
@@ -109,9 +107,6 @@ nmap <C-L> :tabnext<CR>
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command Wq :execute ':W' | :q
 command Q :execute ':q!'
-
-" vim-go
-let g:go_disable_autoinstall = 1
 
 " vim-markdown
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown

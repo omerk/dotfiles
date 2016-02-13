@@ -75,10 +75,10 @@ function pdfjoin()
 	fi
 }
 
-export GOROOT=$HOME/pkg/go
-export PATH=$PATH:$GOROOT/bin
+#export GOROOT=$HOME/pkg/go
+#export PATH=$PATH:$GOROOT/bin
 
-export PATH="$PATH:$HOME/.rvm/bin"
+#export PATH="$PATH:$HOME/.rvm/bin"
 
-. /opt/erlang/activate
+#. /opt/erlang/activate
 
