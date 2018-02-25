@@ -3,6 +3,10 @@
 # setup.sh -- Creates symlinks for the dotfiles
 # Shamelessly stolen from: http://coderwall.com/p/qz3i5w
 
+# Install basics
+sudo apt update
+sudo apt install -y vim git tmux minicom
+
 # Init and update the submodules
 # Usage detailed here: http://mirnazim.org/writings/vim-plugins-i-use/
 echo ">> Initialising git submodules"
