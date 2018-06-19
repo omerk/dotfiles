@@ -3,7 +3,6 @@ set -o vi
 export PATH=$HOME/bin:$HOME/.local/bin:/sbin:/usr/sbin:$PATH
 
 export TERM=xterm-256color
-export GREP_OPTIONS='--color=auto'
 
 if [ $(id -u) -eq 0 ]; then
 	UIDENT="#"
@@ -33,6 +32,10 @@ alias webs='python -m SimpleHTTPServer'
 
 alias please=sudo
 alias fuck='sudo $(history -p \!\!)' 
+
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
 
 alias ..='cd ../../'
 alias ...='cd ../../../'
